@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Inter", sans-serif;
+  --font-brand: "Black Ops One", system-ui, sans-serif;
+  --color-ink: #070a18;
+  --color-panel: #0d1224;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+body {
+  margin: 0;
+  background: #050816;
+  color: #e5e7f5;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-bg {
+  background:
+    radial-gradient(60rem 40rem at 0% 0%, rgba(124, 58, 237, 0.28), transparent 60%),
+    radial-gradient(50rem 40rem at 100% 30%, rgba(37, 99, 235, 0.18), transparent 60%),
+    #050816;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(6px);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #7c3aed, #2563eb);
+  box-shadow: 0 8px 30px -8px rgba(99, 102, 241, 0.7);
+}
+
+.input {
+  width: 100%;
+  background: rgba(5, 8, 22, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: #fff;
+  outline: none;
+}
+.input:focus { border-color: #8b5cf6; box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2); }
+.input::placeholder { color: #64748b; }
+
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
+.float { animation: float 5s ease-in-out infinite; }
+
+@keyframes wave { 0%,100% { transform: rotate(0) } 20% { transform: rotate(18deg) } 40% { transform: rotate(-10deg) } 60% { transform: rotate(14deg) } 80% { transform: rotate(-6deg) } }
+.wave { display: inline-block; transform-origin: 70% 70%; animation: wave 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .float, .wave { animation: none; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
